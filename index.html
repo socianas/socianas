@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SOCIA:NAS - Get in touch whith Nebulas community</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/socianas.css">
+  <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap-table.min.css" rel="stylesheet">
+  <link href="css/simplemde.min.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+  <nav class="navbar navbar-expand-sm navbar-light " id="main-navbar-id" role="tablist" style="background-color: #e9eaed;">
+    <div class="crop">
+<img  src="img/logo.svg" >
+</div>
+    <!-- <a href="#" class="navbar-brand"><img src="img/socianas2.png" height="30"></a> -->
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0 nav"  id="pills-tab2" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="v-pills-main-dashboard-tab" data-toggle="pill" href="#v-pills-main-dashboard" role="tab" aria-controls="v-pills-main-dashboard" aria-selected="false">WELCOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="v-pills-main-browse-tab" data-toggle="pill" href="#v-pills-main-browse" role="tab" aria-controls="v-pills-main-browse" aria-selected="true" >BROWSE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="v-pills-main-user-tab" data-toggle="pill" href="#v-pills-main-user" role="tab" aria-controls="v-pills-main-user" aria-selected="true" ></a>
+        </li>
+      </ul>
+      <div class="mr-5" id="tx-info-id" style="display:none;">
+        <i class="fa fa-spin fa-spinner"></i> TRANSACTION PROCESSING, PLEASE WAIT...
+      </div>
+      <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-sm btn-secondary my-2 my-sm-0 mr-3" type="button " onclick="displayPersonnalPage()" ><i class="fa fa-home"></i> MY PAGE</button>
+        <input class="form-control mr-sm-2" id="navbar-input-search-field-id" placeholder="Search">
+        <button class="btn btn-link my-2 my-sm-0 " type="button " onclick="navbarSearchContent()" ><i class="fa fa-search"></i></button>
+      </form>
+
+    </div>
+
+  </nav>
+
+
+    <div class="spinner" id="spinner-id" style="display:none">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+
+
+
+    <!-- =============================== USER DISPLAY PAGE =============================== : -->
+
+  <div class="wrapper" id="main-content-id">
+    <div class="tab-content" id="v-pills-tabContent2">
+      <div class="tab-pane fade " id="v-pills-main-user" role="tabpanel" aria-labelledby="v-pills-main-user-tab">
+
+
+        <div class="container">
+
+          <div class="row">
+            <div class="col-md-12 " id="banner-user-div-id">
+
+              <div class="slider" style="position: relative; left: 0; top: 0;">
+
+                <img class="float-right banner-image-class" id="banner-image-id" src="./img/default_header2.png">
+
+                <a href="#"><img class="img-responsive avatar-image-class" id="avatar-image-id" src="./img/default-avatar.png"></a>
+
+
+                <span class="site-name user-profile-name-class" id="nickname-id">Welcome !</span>
+                <span class="site-description user-profile-summary-class" id="summary-id">Create your profile in settings tab.</span>
+                <ul class="nav nav-position justify-content-end" id="social-network-list-id">
+
+                </ul>
+              </div>
+
+              <nav class="navbar">
+                <ul class="nav" >
+                  <li><a href="#" onclick="triggerUserFollow()" id="follow-id" data-toggle="tooltip" title="Follow" ><i class="fa fa-heart fa-lg" style="color:#FF69B4"></i> 0</a></li>
+                  <li><a href="#" onclick="triggerUserReputationGood()" id="positive-reputation-id" data-toggle="tooltip" title="Add positive feedback"><i class="fa fa-smile-o fa-lg" ></i> 0</a></li>
+                  <li><a href="#" onclick="triggerUserReputationBad()" id="negative-reputation-id" data-toggle="tooltip" title="Add negative feedback"><i class="fa fa-frown-o fa-lg" ></i> 0</a></li>
+
+                </ul>
+
+                <ul class="nav">
+                  <li><a href="#" id="web-site-id"><i class="fa fa-home" ></i> WEBSITE</a></li>
+                </ul>
+
+                <ul class="nav">
+                  <li><a href="#" id="nas-adress-id">Nas address</a></li>
+                  <li><img class="identicon" height="24" width="24"/> </li>
+                </ul>
+
+
+
+              </nav>
+            </div>
+
+          </div>
+        </div>  <!-- end of div container -->
+
+
+
+        <div class="container">
+
+
+
+
+      <!-- <div class="col-10"> -->
+      <div class="topnav">
+        <ul class="nav  mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">PROFILE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">COMMENTS <span class="badge badge-secondary" id="badge-messages-id">0</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="v-pills-activities-tab" data-toggle="pill" href="#v-pills-activities" role="tab" aria-controls="v-pills-activities" aria-selected="false">ACTIVITIES <span class="badge badge-secondary" id="badge-activity-id">0</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">SETTINGS</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-content" id="v-pills-tabContent">
+
+        <!-- ======================================= Home content ================================================= -->
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+          <h6 class="mt-2 mb-2">HOME PAGE: </h6>
+          <p id="home-page-id"></p>
+
+
+          <div class="container" id="fill-home-page-id">
+          <form>
+
+            <div class="form-group w-75 mx-auto">
+              <label for="textArea"><h3>Fill home page:</h3></label>
+
+              <textarea class="form-control" id="input-home-content-id" rows="6"></textarea>
+
+            </div>
+            <div class="form-group w-75 mx-auto text-center">
+              <button type="button" class="btn btn-primary mb-2" onclick="uploadHomePage()" style="width: 200px !important;" >Submit</button>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+
+        <!-- ======================================= Profile content ================================================= -->
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+
+          <h6 class="mt-2 mb-2">PEOPLE FOLLOWED: </h6>
+
+          <div class="table-responsive w-75 mx-auto">
+
+            <table id="follow-table-id" class="table"
+            data-toggle="table"
+            data-ajax="ajaxRequestFollow"
+            data-side-pagination="server"
+            data-pagination="true"
+            data-sort-order="desc"
+            data-page-size="10"
+            data-show-header="false"
+            data-show-footer="false">
+            <thead>
+              <tr class="browse-user">
+                <th data-field="users">User</th>
+
+
+              </tr>
+            </thead>
+          </table>
+        </div>
+
+
+        </div>
+
+        <!-- ======================================= Comments content ================================================= -->
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+
+          <div class="container pb-3">
+          <button type="button" class="btn btn-outline-primary float-right" onclick="saveBadgeDate()">Mark messages as read</button>
+          <h6 class="mt-2 mb-2">COMMENTS: </h6>
+          <h3></h3>
+        </div>
+
+          <div class="table-responsive w-75 mx-auto">
+            <table id="comment-table-id" class="table"
+            data-toggle="table"
+            data-ajax="ajaxRequestComments"
+            data-side-pagination="server"
+            data-pagination="true"
+            data-sort-order="desc"
+            data-page-size="10"
+            data-show-header="false"
+            data-show-footer="false">
+            <thead>
+              <tr class="names">
+                <th data-field="message"></th>
+
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <form>
+          <div class="form-group w-75 mx-auto">
+            <label for="textArea"><h4>Post a message:</h4></label>
+
+            <textarea class="form-control" id="input-comment-id" rows="4"></textarea>
+
+          </div>
+          <div class="form-group w-75 mx-auto text-center">
+            <button type="button" class="btn btn-primary mb-2" onclick="uploadComment()" style="width: 200px !important;" >Submit</button>
+          </div>
+        </form>
+
+
+      </div>
+
+
+
+
+      <!-- ======================================= Activities content ================================================= -->
+      <div class="tab-pane fade" id="v-pills-activities" role="tabpanel" aria-labelledby="v-pills-activities-tab">
+
+        <div class="container pb-3">
+        <button type="button" class="btn btn-outline-primary float-right" onclick="saveBadgeDate()">Mark messages as read</button>
+        <h6 class="mt-2 mb-2">LAST COMMENTS FROM FOLLOWED PEOPLE:</h6>
+        <h3></h3>
+        </div>
+
+        <div class="table-responsive w-75 mx-auto">
+          <table id="activities-table-id" class="table"
+          data-toggle="table"
+          data-ajax="ajaxRequestActivities"
+          data-side-pagination="server"
+          data-pagination="true"
+          data-sort-order="desc"
+          data-page-size="20"
+          data-show-header="false"
+          data-show-footer="false">
+          <thead>
+            <tr class="names">
+              <th data-field="message"></th>
+
+            </tr>
+          </thead>
+        </table>
+      </div>
+
+    </div>
+
+
+
+    <!-- ======================================= Personnal settings content ================================================= -->
+    <div class="tab-pane fade " id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+
+      <h6 class="mt-2 mb-2">PERSONAL SETTINGS:</h6>
+      <h3></h3>
+      <div class="w-75 mx-auto">
+
+        <form>
+          <p>
+            <div class="form-group">
+              <label for="bannerFileInput">Banner customization</label>
+
+              <div class="custom-file">
+                <input type="file" class="custom-file-input form-control" id="custom-banner-file-id" placeholder="State">
+                <label class="custom-file-label" for="customFile" id="banner-file-name-id">Choose image...</label>
+                <small id="emailHelp" class="form-text text-muted">Recommended banner size: 1110 x 180 pixels - Supported file formats: .jpeg, .png - Max file size: 50 KiB</small>
+                <div class="invalid-feedback">File exceeds 50 KiB, please choose a smaller file size.</div>
+              </div>
+
+              <button type="button" class="btn btn-primary" disabled id="save-banner-button-id">Save banner</button>
+            </div>
+            <hr class="my-4">
+            <div class="form-group">
+              <label for="bannerFileInput">Choose your avatar</label>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="custom-avatar-file-id" placeholder="State">
+                <label class="custom-file-label" for="customFile" id="avatar-file-name-id">Choose image...</label>
+                <small id="emailHelp" class="form-text text-muted">Recommended banner size: 160 x 160 pixels - Supported file formats: .jpeg, .png, .gif - Max file size: 50 KiB</small>
+                <div class="invalid-feedback">File exceeds 50 KiB, please choose a smaller file size.</div>
+
+              </div>
+              <button type="button" class="btn btn-primary" disabled id="save-avatar-button-id">Save avatar</button>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="form-group">
+              <label for="socianas-username-id">NickName</label>
+              <input type="text" class="form-control" onblur="checkUsernameAvailability()" maxlength="30" required id="socianas-username-id" aria-describedby="emailHelp" placeholder="Enter NickName">
+              <small id="emailHelp" class="form-text text-muted">Choose a unique nickname that can identify yourself as your wallet adress - 30 characters maximum - Allowed characters: a-z, A-Z, 0-9, -, _, .</small>
+              <div class="valid-feedback">
+                This username is available.
+              </div>
+              <div class="invalid-feedback" id="username-invalid-feedback-id">
+                This username is already used, please choose another one.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="socianas-description-id">Description</label>
+              <input type="text" class="form-control" id="socianas-description-id" maxlength="60" placeholder="Enter description">
+              <small id="emailHelp" class="form-text text-muted">Maximum 60 characters</small>
+            </div>
+            <div class="form-group">
+              <label for="socianas-website-id">WebSite</label>
+              <input type="text" class="form-control" id="socianas-website-id" maxlength="80" placeholder="Enter your website address">
+              <small id="emailHelp" class="form-text text-muted">Maximum 80 characters</small>
+            </div>
+
+
+            <div class="form-group" >
+              <label for="exampleInputPassword1">Add social network link</label> <small class="text-muted"> - Maximum 5 links</small>
+              <div class="form-row">
+                <div class="form-group col-md-8">
+                  <div class="form-row" id="social-network-form-id-1" style="margin-bottom: 5px;">
+                    <div class="col-3">
+                      <select class="custom-select" id="input-social-select-id-1">
+                        <option selected>Choose...</option>
+                        <option value="1">Twitter</option>
+                        <option value="2">Facebook</option>
+                        <option value="3">Instagram</option>
+                        <option value="4">Snapchat</option>
+                        <option value="5">Email</option>
+                      </select>
+                    </div>
+                    <div class="col-9">
+                      <input type="text" class="form-control" id="input-social-url-id-1" placeholder="Enter Url">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group col-md-1">
+                  <button type="button" class="btn btn-outline-primary" onclick="addAnotherSocialLink()">Add another link</button>
+                </div>
+                <div class="form-group col-md-8" id="social-network-form-group-id-2" style="display:none">
+                  <div class="form-row" id="social-network-form-id-2" style="margin-bottom: 5px;">
+                    <div class="col-3">
+                      <select class="custom-select" id="input-social-select-id-2">
+                        <option selected>Choose...</option>
+                        <option value="1">Twitter</option>
+                        <option value="2">Facebook</option>
+                        <option value="3">Instagram</option>
+                        <option value="4">Snapchat</option>
+                        <option value="5">Email</option>
+                      </select>
+                    </div>
+                    <div class="col-9">
+                      <input type="text" class="form-control" id="input-social-url-id-2" placeholder="Enter Url">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group col-md-8" id="social-network-form-group-id-3" style="display:none">
+                  <div class="form-row" id="social-network-form-id-3" style="margin-bottom: 5px;">
+                    <div class="col-3">
+                      <select class="custom-select" id="input-social-select-id-3">
+                        <option selected>Choose...</option>
+                        <option value="1">Twitter</option>
+                        <option value="2">Facebook</option>
+                        <option value="3">Instagram</option>
+                        <option value="4">Snapchat</option>
+                        <option value="5">Email</option>
+                      </select>
+                    </div>
+                    <div class="col-9">
+                      <input type="text" class="form-control" id="input-social-url-id-3" placeholder="Enter Url">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-8" id="social-network-form-group-id-4" style="display:none">
+                  <div class="form-row" id="social-network-form-id-4" style="margin-bottom: 5px;">
+                    <div class="col-3">
+                      <select class="custom-select" id="input-social-select-id-4">
+                        <option selected>Choose...</option>
+                        <option value="1">Twitter</option>
+                        <option value="2">Facebook</option>
+                        <option value="3">Instagram</option>
+                        <option value="4">Snapchat</option>
+                        <option value="5">Email</option>
+                      </select>
+                    </div>
+                    <div class="col-9">
+                      <input type="text" class="form-control" id="input-social-url-id-4" placeholder="Enter Url">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-8" id="social-network-form-group-id-5" style="display:none">
+                  <div class="form-row" id="social-network-form-id-5" style="margin-bottom: 5px;">
+                    <div class="col-3">
+                      <select class="custom-select" id="input-social-select-id-5">
+                        <option selected>Choose...</option>
+                        <option value="1">Twitter</option>
+                        <option value="2">Facebook</option>
+                        <option value="3">Instagram</option>
+                        <option value="4">Snapchat</option>
+                        <option value="5">Email</option>
+                      </select>
+                    </div>
+                    <div class="col-9">
+                      <input type="text" class="form-control" id="input-social-url-id-5" placeholder="Enter Url">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group" >
+            <div class="form-row align-items-center">
+              <div class="col-md-3 my-1">
+                <label for="inputEmail4">Banner text color</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">#</div>
+                  </div>
+                  <input type="text" maxlength="6" class="form-control" id="text-color-input-id" placeholder="FFFFFF">
+                  <div class="invalid-feedback">
+                    The color format is incorrect
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="form-group" >
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" checked="checked" id="display-border-around-avatar-id">
+              <label class="form-check-label " for="autoSizingCheck2">
+                Display border around avatar
+              </label>
+            </div>
+            </div>
+            <div class="form-group" >
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" checked="checked" id="use-notification-badges-id">
+              <label class="form-check-label" for="autoSizingCheck2">
+                Use badges for notifications
+              </label>
+            </div>
+              </div>
+
+
+
+
+
+            <p></p>
+            <div class="form-group" >
+            <a class="btn btn-primary btn-space" id="login_btton" href="#" role="button" onclick="triggerLogin()"><i class="fa fa-upload"></i> Login</a>
+            <a class="btn btn-success btn-space" id="tx_btton" href="#" role="button" onclick="triggerUpload()"><i class="fa fa-upload"></i> Save profile</a>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+      <!-- ======================================= End of personnal settings content =============================================== -->
+
+
+      <!-- </div> -->
+
+    </div>
+
+  </div>
+
+
+
+
+</div>  <!-- ================================BEGIN OF DASHBOARD CONTENT ================================-->
+
+<div class="tab-pane fade show active" id="v-pills-main-dashboard" role="tabpanel" aria-labelledby="v-pills-main-dashboard-tab" >
+
+<!-- linear-gradient(to bottom right, #55aaff, #55aaff); -->
+  <!-- <div ">#25c6d0) -->
+  <div class="jumbotron jumbotron-fluid " style="min-height:400px; background: radial-gradient(at bottom, #0096f7 16%, #00438f)">
+    <div class="container">
+      <h2 class="display-5 text-white"><i class="fa fa-comments"></i> Meet Nebulas Users</h2>
+      <p class="lead text-white">Customize your own page - Comment and follow other users</p>
+
+
+      <div class="spinner" id="spinner-login-id" style="display:none">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+
+      <div class="container" id="main-content-login-id">
+          <div class="row">
+
+              <div class="col-md-8 offset-md-2">
+                  <div class="row">
+                      <div class="col-md-6 mx-auto">
+                          <div class="card rounded-0">
+                              <div class="card-header center">
+                                  <h3 class="mb-0 text-white text-center" id="login-nickname-id">New User ?</h3>
+                                  <p style="text-align:center;">
+                                  <img id="login-avatar-id" src="img/default-avatar.png" height="100"></a>
+                                </p>
+                              </div>
+                              <div class="card-body">
+
+                                <button type="button" class="btn btn-warning btn-block" id="btn-login-id" onclick="displayUserTab()" style="display:none">Go to my page</button>
+                                <button type="button" class="btn btn-warning btn-block" id="btn-login-default-1-id" onclick="displayUserTab()">Create my page</button>
+                                <button type="button" class="btn btn-light btn-block" id="btn-login-default-2-id" onclick="displayBrowseTab()">Take a tour</button>
+
+                              </div>
+                              <!--/card-block-->
+                          </div>
+                          <!-- /form card login -->
+                      </div>
+                  </div>
+                  <!--/row-->
+              </div>
+              <!--/col-->
+              <div class="col-md-2">
+                    <div class="row">
+                        <div class="col">
+
+                        <div class="statistics">
+                          <div class="card mb-3">
+                            <div class="card-header text-center card-statistics">#USERS</div>
+                            <div class="card-body">
+                              <h6 class="card-title text-center" id="registered-user-text-id">0</h6>
+                            </div>
+                          </div>
+
+                          <div class="card mb-3">
+                            <div class="card-header text-center card-statistics">#COMMENTS</div>
+                            <div class="card-body">
+                              <h6 class="card-title text-center" id="comments-text-id">0</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+
+          </div>
+          <!--/row-->
+      </div>
+      <!--/container-->
+
+    </div>
+
+
+
+  </div>
+
+
+  <!-- <div style=" min-height:250px; background: #e9eaed;" #6bffcb> -->
+<!-- #15ffad -->
+  <div class="container-fluid"  style=" background: linear-gradient(to bottom right, #15ffad, #9bffdc);">
+
+
+    <!-- <h5 style="color: #7b7b7b;">VISIT NEWCOMERS PAGES:</h5> -->
+    <h4 style="color: white;  padding-top: 1em; padding-left: 2.5em" ><i class="fa fa-arrow-circle-right"></i> Visit Newcomers Pages</h4>
+
+
+    <div class="card-deck d-flex justify-content-center" id="card-deck-id-1">
+    </div>
+    <div class="card-deck  d-flex justify-content-center " id="card-deck-id-2">
+    </div>
+
+  </div>  <!-- end of div container -->
+  <p></p>
+
+</div> <!-- ================================ENF OF DASHBOARD CONTENT ================================-->
+
+
+
+
+  <!-- ================================BEGIN OF BROWSE CONTENT ================================-->
+
+<div class="tab-pane fade" id="v-pills-main-browse" role="tabpanel" aria-labelledby="v-pills-main-browse-tab" >
+
+  <!-- <div ">#25c6d0) -->
+
+    <div class="container">
+      <h4 class="display-5" style="padding-top:1em; margin-bottom:1em;" > BROWSE NEBULAS USERS:</h4>
+
+
+
+
+
+
+
+    <div class="form-row align-items-center w-75 mx-auto">
+
+      <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+
+          <ul  class="list-inline">
+            <li class="list-inline-item">
+          <label class="sort-labellist-inline-item">Sort by: </label>
+        </li>
+
+          <li class="list-inline-item">
+          <h5><a class="badge badge-primary" href="#" id="browse-date-id"><i class="fa fa-calendar"></i> Date</a></h5>
+          </li>
+          <li class="list-inline-item">
+          <h5><a href="#" class="badge badge-secondary" id="browse-follow-id" ><i class="fa fa-heart"></i> Followers</a></h5>
+          </li>
+          <li class="list-inline-item">
+          <h5><a href="#" class="badge badge-secondary" id="browse-positive-id"><i class="fa fa-eye"></i> Positive</a></h5>
+          </li>
+          </ul>
+        </div>
+
+        <div class="col-md-3 offset-md-1" style="padding-right:0;">
+          <input type="text" class="form-control" id="input-search-field-id"  placeholder="Search">
+        </div>
+            <div class="col-md-1" style="padding-left:0;">
+              <button type="button" class="btn btn-primary" onclick="searchContent()"><i class="fa fa-search"></i></button>
+            </div>
+
+      </div>
+      </div>
+
+   </div>
+
+    <div class="table-responsive w-75 mx-auto" style="padding-top:3em;">
+
+      <table id="browse-table-id" class="table"
+      data-toggle="table"
+      data-ajax="ajaxRequestBrowse"
+      data-side-pagination="server"
+      data-pagination="true"
+      data-sort-order="desc"
+      data-page-size="10"
+      data-show-header="false"
+      data-show-footer="false">
+      <thead>
+        <tr class="browse-user">
+          <th data-field="users">User</th>
+
+
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+
+
+
+    </div> <!-- ================================ENF OF BROWSE CONTENT ================================-->
+
+
+  </div>
+
+
+</div>   <!-- ======================================= End WRAPPER =============================================== -->
+
+
+
+
+<footer class="container text-center">
+  <hr class="my-4">
+  Powered by <a href="https://nebulas.io/" data-value="action" target="_blank">Nebulas</a>
+  <p>
+    <a href="mailto:contact@socianas.io">Contact</a> <p>
+    </footer>
+
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap-table.js"></script>
+
+    <script src="lib/nebulas.js"></script>
+    <script src="lib/nebPay.js"></script>
+    <script src="js/bootbox.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/numeral.min.js"></script>
+    <script src="js/showdown.min.js"></script>
+    <script src="js/purify.min.js"></script>
+    <script src="js/simplemde.min.js"></script>
+    <script src="js/blockies.min.js"></script>
+    <script src="js/jquery.qrcode.min.js"></script>
+
+
+    <script src="js/socianas.js"></script>
+
+    <script>
+
+
+    // page user redirection :
+    var urlParams = new URLSearchParams(location.search);
+
+    if (urlParams.has('user')) {
+      displayUserPage(urlParams.get('user'));
+    }
+
+    $('#v-pills-main-dashboard-tab').tab('show');
+    gTabId = "v-pills-main-dashboard-tab";
+    manageNavigation();
+
+
+    $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
+
+      gTabId = e.target.id;
+      manageNavigation();
+
+    });
+
+    // user click on his page form navbar :
+    $('a[data-toggle="pill"]').on('click', function (e) {
+
+      if (e.target.id == "v-pills-main-user-tab") {
+        displayPersonnalPage();
+      }
+
+    });
+
+
+
+
+    </script>
+  </body>
+  </html>
